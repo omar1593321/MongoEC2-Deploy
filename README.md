@@ -41,27 +41,29 @@ eksctl create cluster --name my-cluster --region <region> --nodes 2
 Configure kubectl:
 Ensure kubectl is configured to interact with your new EKS cluster:
 
-bash
+```
 
 aws eks --region <region> update-kubeconfig --name my-cluster
 
 Deploy MongoDB and Mongo Express:
 Apply the Kubernetes YAML files for MongoDB and Mongo Express:
 
-bash
+```
+```
 
 kubectl apply -f mongodb-deployment.yaml
 kubectl apply -f mongo-express-deployment.yaml
 
+```
 Verify the Deployment:
 Check the status of the pods, services, and persistent volumes:
 
-bash
+```
 
     kubectl get pods
     kubectl get services
     kubectl get pv
-
+```
     Access Mongo Express:
     Find the external IP or port of the Mongo Express service and navigate to it in your web browser to manage your MongoDB instance.
 
