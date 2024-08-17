@@ -59,7 +59,8 @@ aws eks --region <region> update-kubeconfig --name my-cluster
 
 - MongoDB Deployment YAML: Includes configurations for persistent storage and environment variables.
 
-- Mongo Express Deployment YAML: Configures the web-based admin interface and service exposure.       
+- Mongo Express Deployment YAML: Configures the web-based admin interface and service exposure.
+       
 🚀 **Usage**
 
 - Manage MongoDB: Use Mongo Express to manage your MongoDB instance through a web interface.
