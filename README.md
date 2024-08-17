@@ -1,6 +1,7 @@
 MongoDB Deployment on EKS with Mongo Express 🚀
 
 Welcome to my project, where I deployed MongoDB with Mongo Express on Amazon EKS (Elastic Kubernetes Service). This guide will walk you through the setup, deployment, and configuration of this stateful application on a managed Kubernetes service.
+
 📂 Project Overview
 
 In this project, I utilized Amazon EKS to deploy a MongoDB database and the Mongo Express web-based admin interface. The setup includes configuring persistent storage, network services, and addressing deployment challenges, all while leveraging the power of AWS’s managed Kubernetes service.
