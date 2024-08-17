@@ -21,6 +21,6 @@ Prerequisites:
 Setup Instructions:
 Create an EKS Cluster:
     Use eksctl to create an EKS cluster:
-    ```bash
+    ```
     eksctl create cluster --name my-cluster --region <region> --nodes 2
     ```
