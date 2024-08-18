@@ -12,7 +12,7 @@ In this project, I utilized Amazon EKS to deploy a MongoDB database and the Mong
 - **Persistent Storage:** Implemented PersistentVolumeClaims (PVC) and PersistentVolumes (PV) to ensure data persistence for MongoDB.
 - **Service Exposure:** Configured Kubernetes services for MongoDB and Mongo Express to allow secure and reliable external access.
 - **Troubleshooting and Optimization:** Documented challenges such as pod scheduling and node capacity constraints, with solutions applied to ensure smooth operation.
-
+- **IAM Role and Policy Configuration:** Set up IAM roles and policies for managing EBS volumes and EKS access.
 ## 🛠 Getting Started
 
 ### **Prerequisites:**
@@ -55,6 +55,27 @@ aws eks --region <region> update-kubeconfig --name my-cluster
     ```
   5. **Access Mongo Express:**
      Find the external IP or port of the Mongo Express service and navigate to it in your web browser to manage your MongoDB instance.
+  6. **IAM Role and Policy Configuration:**
+
+     Create an IAM Role for EBS CSI Driver:
+        Go to the IAM console and create a new role.
+        Select "EKS - Cluster" as the trusted entity.
+        Attach the AmazonEBSCSIDriverPolicy policy to the role.
+
+     Attach the IAM Role to Your EKS Nodes:
+        Ensure your EKS worker nodes have the IAM role attached, allowing them to use the EBS CSI driver.
+     
+     7. **Port Configuration Details:**
+
+     MongoDB Ports:
+        MongoDB operates on the default port 27017. This port is exposed within the Kubernetes Service and the Deployment configuration, allowing communication between MongoDB and other services, like Mongo Express.
+        Ensure that this port is properly configured in both the service and deployment YAML files to allow seamless database connectivity.
+
+     Mongo Express Ports:
+        Mongo Express, which provides a web-based admin interface for MongoDB, operates on port 8081.
+        The Service for Mongo Express is configured as a LoadBalancer to expose this port to external traffic, allowing you to access the Mongo Express UI via your browser.
+        Ensure your security groups, VPC settings, and service configuration correctly expose this port for external access.
+     
 **Configuration Files:**
 
 - MongoDB Deployment YAML: Includes configurations for persistent storage and environment variables.
