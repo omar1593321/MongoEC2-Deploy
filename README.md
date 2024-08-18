@@ -100,7 +100,9 @@ aws eks --region <region> update-kubeconfig --name my-cluster
 This project provides a comprehensive guide to deploying MongoDB and Mongo Express on Amazon EKS, offering practical experience with managed Kubernetes services, persistent storage, and cloud resource management.
 
 Feel free to fork this repository and adapt the configurations to your own environment. Contributions and feedback are always welcome!
+
 **Screen Shots**:
+
 ![Screenshot 2024-08-18 021032](https://github.com/user-attachments/assets/ace2d7c9-6c96-436f-b819-d714b02a018d)
 ![Screenshot 2024-08-18 021311](https://github.com/user-attachments/assets/75a9a9dc-95bc-47bf-8648-bf64bbaa3da9)
 
