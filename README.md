@@ -54,7 +54,9 @@ aws eks --region <region> update-kubeconfig --name my-cluster
     kubectl get pv
     ```
   5. **Access Mongo Express:**
+     
      Find the external IP or port of the Mongo Express service and navigate to it in your web browser to manage your MongoDB instance.
+     
   6. **IAM Role and Policy Configuration:**
 
      Create an IAM Role for EBS CSI Driver:
@@ -65,7 +67,7 @@ aws eks --region <region> update-kubeconfig --name my-cluster
      Attach the IAM Role to Your EKS Nodes:
         Ensure your EKS worker nodes have the IAM role attached, allowing them to use the EBS CSI driver.
      
-     7. **Port Configuration Details:**
+  7. **Port Configuration Details:**
 
      MongoDB Ports:
         MongoDB operates on the default port 27017. This port is exposed within the Kubernetes Service and the Deployment configuration, allowing communication between MongoDB and other services, like Mongo Express.
