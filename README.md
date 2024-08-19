@@ -36,6 +36,8 @@ aws eks --region <region> update-kubeconfig --name my-cluster
 3. **Deploy MongoDB and Mongo Express:**
    Apply the Kubernetes YAML files for MongoDB and Mongo Express:
    ```bash
+   kubectl apply -k github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/ecr # Install the EBS CSI Driver
+   kubectl get csidrivers # Verify the CSI Driver is Registered You should see an entry for ebs.csi.aws.com.
    kubectl apply -f secret.yaml # to create the Secret called mongodb-secret
    kubectl apply -f mongodb-sc.yaml # to create the StorageClass called mongodb-sc.
    kubectl apply -f mongodb-pvc.yaml # to create the PersistentVolumeClaim called mongodb-pvc.
@@ -45,6 +47,7 @@ aws eks --region <region> update-kubeconfig --name my-cluster
    kubectl apply -f mongodb-config.yaml # to create the Configmap called mongodb-configmap.
    # Create another Deployment . The Deployment will contain a Mongodb-Express Pod, which is a web-based interface to manage MongoDB databases. It will use the username and password from Secret, and the database url from       ConfigMap to access the MongoDB internal Service defined in mongodb.yaml.
    kubectl apply -f mongo-express.yaml # to create the Deployment called mongo-express and create the Service called mongo-express-service
+   
    ```
  4. **Verify the Deployment:**
     Check the status of the pods, services, and persistent volumes:
